@@ -2,6 +2,28 @@
    TATTOO CARE SITE — JavaScript
    Funcionalidades: Partículas, Tabs, Cards, Scroll
    ============================================================ */
+class MobileMenu {
+  constructor() {
+    this.menuToggle = document.querySelector(".menu-toggle");
+    this.nav = document.querySelector(".nav");
+
+    this.init();
+  }
+
+  init() {
+    if (!this.menuToggle || !this.nav) return;
+
+    this.menuToggle.addEventListener("click", () => {
+      this.nav.classList.toggle("active");
+    });
+  }
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  new ParticleCanvas();
+  new TabSwitcher();
+  new MobileMenu(); // 👈 ADICIONE ISSO
+});
 
 // ── PARTICLE CANVAS ──
 class ParticleCanvas {

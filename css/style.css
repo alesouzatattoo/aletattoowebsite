@@ -111,7 +111,13 @@ img{
 @media (max-width: 768px) {
   .nav {
     display: none;
+    flex-direction: column;
   }
+  
+  .nav.active {
+    display: flex;
+  }
+
   .menu-toggle {
     display: block;
   }

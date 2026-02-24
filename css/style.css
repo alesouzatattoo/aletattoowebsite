@@ -5,6 +5,118 @@
    Typography: Cinzel Decorative, Cinzel, Raleway
    ============================================================ */
 
+/* ── HEADER ── */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: rgba(6, 6, 14, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(0, 212, 232, 0.1);
+  z-index: 100;
+  padding: 0.1rem 0;
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+img{
+  -webkit-user-drag: none;
+  user-select: none;
+  pointer-events: none;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-family: 'Cinzel Decorative', serif;
+  font-size: 0.25rem;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 0.1em;
+  text-decoration: none;
+  transform: scale(0.6); /* 80% do tamanho */
+  transform-origin: left; /* mantém alinhado à esquerda */
+}
+.logo-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* left */
+  align-items: center;
+}
+
+.brand-name {
+  font-size: 40px;
+  letter-spacing: 6px;
+}
+
+.brand-subtitle {
+  font-size: 14px;
+  letter-spacing: 4px;
+  margin-top: 5px;
+}
+
+.logo svg {
+  width: 40px;
+  height: 40px;
+}
+
+.nav {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.nav a {
+  font-family: 'Cinzel', serif;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+  letter-spacing: 0.05em;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+}
+
+.nav a:hover {
+  color: #00d4e8;
+}
+
+.nav-cta {
+  padding: 0.5rem 1rem;
+  background: rgba(0, 212, 232, 0.1);
+  border: 1px solid rgba(0, 212, 232, 0.4);
+  border-radius: 4px;
+  color: #00d4e8 !important;
+}
+
+.nav-cta:hover {
+  background: rgba(0, 212, 232, 0.2);
+  border-color: rgba(0, 212, 232, 0.6);
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: #00d4e8;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .nav {
+    display: none;
+  }
+  .menu-toggle {
+    display: block;
+  }
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -112,6 +224,25 @@ p {
   max-width: 900px;
   margin: 0 auto;
 }
+
+.brand-name-logo {
+  font-family: 'Cinzel Decorative', serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 0.2em;
+  margin-bottom: 0.1rem;
+}
+
+.brand-subtitle-logo {
+  font-family: 'Cinzel', serif;
+  font-size: 1rem;
+  color: rgba(0, 212, 232, 0.7);
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+}
+
 
 .brand-name {
   font-family: 'Cinzel Decorative', serif;
@@ -632,6 +763,659 @@ footer {
   }
 
   .rules-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cta-buttons {
+    flex-direction: column;
+  }
+
+  .btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* ── HIDDEN CLASS ── */
+.hidden {
+  display: none !important;
+}
+
+/* ── ABOUT SECTION ── */
+.about-section {
+  padding: 6rem 1rem;
+  background-color: #06060e;
+  border-top: 1px solid rgba(0, 212, 232, 0.1);
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.about-text h2 {
+  text-align: left;
+  margin-bottom: 1.5rem;
+}
+
+.about-text p {
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+.about-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.stat {
+  text-align: center;
+}
+
+.stat-number {
+  font-family: 'Cinzel Decorative', serif;
+  font-size: 2rem;
+  color: #00d4e8;
+  margin-bottom: 0.5rem;
+}
+
+.stat-label {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.6);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.about-image {
+  display: flex;
+  justify-content: center;
+}
+
+.image-placeholder {
+  width: 100%;
+  max-width: 300px;
+  aspect-ratio: 3/4;
+  object-fit: cover;
+  border: 2px dashed rgba(0, 212, 232, 0.3);
+  border-radius: 8px;
+  overflow: hidden;
+  background: linear-gradient(135deg, rgba(0, 212, 232, 0.1), rgba(0, 212, 232, 0.05));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.placeholder-text {
+  font-size: 1rem;
+  color: rgba(0, 212, 232, 0.5);
+  text-align: center;
+  font-family: 'Raleway', sans-serif;
+}
+
+/* ── PORTFOLIO SECTION ── */
+.portfolio-section {
+  padding: 6rem 1rem;
+  background-color: #06060e;
+  border-top: 1px solid rgba(0, 212, 232, 0.1);
+}
+
+.section-subtitle {
+  text-align: center;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.9rem;
+  margin-bottom: 3rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.portfolio-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  aspect-ratio: 3/4;
+  cursor: pointer;
+  border: 1px solid rgba(0, 212, 232, 0.2);
+}
+
+.portfolio-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.watermark {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.watermark::before{
+  content: "© Alessandra Souza ©";
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 50%;
+  left: -50%;
+  width: 200%;
+  transform: rotate(-30deg) translatey(-50%);
+  font-size: 28px;
+  font-weight: 700;
+  color: rgba(255,255,255,0.4);
+}
+
+.portfolio-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, rgba(0, 212, 232, 0.1), rgba(0, 212, 232, 0.05));
+  border: 2px dashed rgba(0, 212, 232, 0.3);
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.portfolio-item:hover .portfolio-placeholder {
+  background: linear-gradient(135deg, rgba(0, 212, 232, 0.15), rgba(0, 212, 232, 0.1));
+  border-color: rgba(0, 212, 232, 0.5);
+}
+
+.placeholder-icon {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  opacity: 0.6;
+}
+
+.placeholder-text {
+  font-size: 0.85rem;
+  color: rgba(0, 212, 232, 0.5);
+  text-align: center;
+  font-family: 'Raleway', sans-serif;
+}
+
+.portfolio-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.9) 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 1.5rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.portfolio-item:hover .portfolio-overlay {
+  opacity: 1;
+}
+
+.portfolio-overlay h3 {
+  color: #00d4e8;
+  margin-bottom: 0.5rem;
+}
+
+.portfolio-overlay p {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.portfolio-cta {
+  text-align: center;
+}
+
+.portfolio-cta p {
+  margin-bottom: 1rem;
+}
+
+/* ── SERVICES SECTION ── */
+.services-section {
+  padding: 6rem 1rem;
+  background-color: #06060e;
+  border-top: 1px solid rgba(0, 212, 232, 0.1);
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.service-card {
+  background: rgba(0, 212, 232, 0.03);
+  border: 1px solid rgba(0, 212, 232, 0.15);
+  border-radius: 8px;
+  padding: 2rem;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.service-card:hover {
+  background: rgba(0, 212, 232, 0.08);
+  border-color: rgba(0, 212, 232, 0.3);
+  transform: translateY(-5px);
+  box-shadow: 0 0 20px rgba(0, 212, 232, 0.1);
+}
+
+.service-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.service-card h3 {
+  color: #00d4e8;
+  margin-bottom: 0.75rem;
+}
+
+.service-card p {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.65);
+}
+
+/* ── TESTIMONIALS SECTION ── */
+.testimonials-section {
+  padding: 6rem 1rem;
+  background-color: #06060e;
+  border-top: 1px solid rgba(0, 212, 232, 0.1);
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.testimonial-card {
+  background: rgba(0, 212, 232, 0.03);
+  border: 1px solid rgba(0, 212, 232, 0.15);
+  border-radius: 8px;
+  padding: 2rem;
+  transition: all 0.3s ease;
+}
+
+.testimonial-card:hover {
+  background: rgba(0, 212, 232, 0.08);
+  border-color: rgba(0, 212, 232, 0.3);
+}
+
+.stars {
+  color: #ffc107;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+}
+
+.testimonial-card p {
+  font-style: italic;
+  margin-bottom: 1rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.testimonial-author {
+  font-family: 'Cinzel', serif;
+  font-size: 0.85rem;
+  color: #00d4e8;
+  letter-spacing: 0.05em;
+}
+
+/* ── CARE SECTION ── */
+.care-section {
+  padding: 6rem 1rem;
+  background-color: #06060e;
+  border-top: 1px solid rgba(0, 212, 232, 0.1);
+}
+
+.tabs {
+  display: flex;
+  gap: 0;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+.tab-btn {
+  padding: 0.75rem 1.5rem;
+  font-size: 0.85rem;
+  font-family: 'Cinzel', serif;
+  color: rgba(255, 255, 255, 0.6);
+  background: rgba(0, 212, 232, 0.05);
+  border: 1px solid rgba(0, 212, 232, 0.2);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.tab-btn:hover {
+  color: #00d4e8;
+  border-color: rgba(0, 212, 232, 0.5);
+}
+
+.tab-btn.active {
+  background: rgba(0, 212, 232, 0.15);
+  color: #00d4e8;
+  border-color: #00d4e8;
+  box-shadow: 0 0 15px rgba(0, 212, 232, 0.2);
+}
+
+.tab-btn:first-child {
+  border-radius: 4px 0 0 4px;
+}
+
+.tab-btn:last-child {
+  border-radius: 0 4px 4px 0;
+}
+
+.tab-content {
+  display: none;
+}
+
+.tab-content:not(.hidden) {
+  display: block;
+}
+
+.cards-container {
+  margin-top: 2rem;
+}
+
+.card {
+  background: rgba(0, 212, 232, 0.03);
+  border: 1px solid rgba(0, 212, 232, 0.15);
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  background: rgba(0, 212, 232, 0.08);
+  border-color: rgba(0, 212, 232, 0.3);
+  box-shadow: 0 0 20px rgba(0, 212, 232, 0.1);
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  cursor: pointer;
+  user-select: none;
+}
+
+.card-number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(0, 212, 232, 0.15);
+  color: #00d4e8;
+  font-family: 'Cinzel', serif;
+  font-weight: 700;
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+
+.card-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.85);
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  flex: 1;
+}
+
+.card-toggle {
+  color: #00d4e8;
+  font-size: 1.2rem;
+  transition: transform 0.3s ease;
+}
+
+.card.open .card-toggle {
+  transform: rotate(45deg);
+}
+
+.card-content {
+  display: none;
+  padding-top: 1rem;
+  margin-top: 1rem;
+  border-top: 1px solid rgba(0, 212, 232, 0.1);
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.9rem;
+  line-height: 1.7;
+}
+
+.card.open .card-content {
+  display: block;
+  animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ── CONTACT SECTION ── */
+.contact-section {
+  padding: 6rem 1rem;
+  background-color: #06060e;
+  border-top: 1px solid rgba(0, 212, 232, 0.1);
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.contact-card {
+  background: rgba(0, 212, 232, 0.03);
+  border: 1px solid rgba(0, 212, 232, 0.15);
+  border-radius: 8px;
+  padding: 2rem;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.contact-card:hover {
+  background: rgba(0, 212, 232, 0.08);
+  border-color: rgba(0, 212, 232, 0.3);
+  transform: translateY(-5px);
+}
+
+.contact-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.contact-card h3 {
+  color: #00d4e8;
+  margin-bottom: 0.75rem;
+}
+
+.contact-card p {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.65);
+  margin-bottom: 1.5rem;
+}
+
+/* ── FOOTER ── */
+footer {
+  border-top: 1px solid rgba(0, 212, 232, 0.15);
+  background: #06060e;
+  padding: 3.5rem 1rem;
+  text-align: center;
+}
+
+.footer-brand {
+  font-family: 'Cinzel Decorative', serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 0.15em;
+  margin-bottom: 0.25rem;
+}
+
+.footer-subtitle {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  color: rgba(0, 212, 232, 0.7);
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+}
+
+.footer-divider {
+  width: 100px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #00d4e8, transparent);
+  margin: 1.5rem auto 2rem;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+.social-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.625rem 1.25rem;
+  font-size: 0.75rem;
+  font-family: 'Cinzel', serif;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.social-whatsapp {
+  background: rgba(37, 211, 102, 0.1);
+  border: 1px solid rgba(37, 211, 102, 0.4);
+  color: #25d366;
+}
+
+.social-whatsapp:hover {
+  background: rgba(37, 211, 102, 0.2);
+  border-color: rgba(37, 211, 102, 0.6);
+}
+
+.social-instagram {
+  background: rgba(225, 48, 108, 0.1);
+  border: 1px solid rgba(225, 48, 108, 0.4);
+  color: #e1306c;
+}
+
+.social-instagram:hover {
+  background: rgba(225, 48, 108, 0.2);
+  border-color: rgba(225, 48, 108, 0.6);
+}
+
+.footer-text {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.25);
+}
+
+/* ── FLOATING WHATSAPP BUTTON ── */
+.floating-whatsapp {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #25d366;
+  box-shadow: 0 4px 20px rgba(37, 211, 102, 0.5), 0 0 0 0 rgba(37, 211, 102, 0.4);
+  animation: pulse-whatsapp 2s infinite;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.floating-whatsapp:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 25px rgba(37, 211, 102, 0.7), 0 0 0 0 rgba(37, 211, 102, 0.4);
+}
+
+.floating-whatsapp svg {
+  width: 28px;
+  height: 28px;
+  fill: white;
+}
+
+@keyframes pulse-whatsapp {
+  0% {
+    box-shadow: 0 4px 20px rgba(37, 211, 102, 0.5), 0 0 0 0 rgba(37, 211, 102, 0.4);
+  }
+  70% {
+    box-shadow: 0 4px 20px rgba(37, 211, 102, 0.5), 0 0 0 12px rgba(37, 211, 102, 0);
+  }
+  100% {
+    box-shadow: 0 4px 20px rgba(37, 211, 102, 0.5), 0 0 0 0 rgba(37, 211, 102, 0);
+  }
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  h2 {
+    font-size: 1.75rem;
+  }
+
+  .hero {
+    padding: 6rem 1rem 2rem;
+  }
+
+  .butterfly {
+    width: 150px;
+    height: 150px;
+    top: 10%;
+    right: 5%;
+  }
+
+  .about-stats {
     grid-template-columns: 1fr;
   }
 

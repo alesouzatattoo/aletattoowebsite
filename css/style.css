@@ -1,0 +1,651 @@
+/* ============================================================
+   TATTOO CARE SITE — Dark Studio Aesthetic
+   Design: Neo-Gothic Expressionism
+   Colors: Black (#06060e), Cyan (#00d4e8), Red (#ff3030)
+   Typography: Cinzel Decorative, Cinzel, Raleway
+   ============================================================ */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Raleway', sans-serif;
+  background-color: #06060e;
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* ── TYPOGRAPHY ── */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Cinzel', serif;
+  color: #ffffff;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+}
+
+h1 {
+  font-family: 'Cinzel Decorative', serif;
+  font-size: 3.5rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  line-height: 1.2;
+}
+
+h2 {
+  font-size: 2rem;
+  letter-spacing: 0.15em;
+  margin-bottom: 1.5rem;
+}
+
+h3 {
+  font-size: 1.25rem;
+  letter-spacing: 0.1em;
+}
+
+p {
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.75);
+  margin-bottom: 1rem;
+}
+
+/* ── UTILITIES ── */
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+@media (min-width: 640px) {
+  .container {
+    padding: 0 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    padding: 0 2rem;
+  }
+}
+
+/* ── HERO SECTION ── */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #06060e 0%, #0a0a14 100%);
+  overflow: hidden;
+  padding: 2rem 1rem;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(to bottom, 
+      rgba(0, 0, 0, 0) 60%, 
+      rgba(0, 0, 0, 1) 100%
+    ), url("/images/i9Vwo9K0N4orcG6JdEUEzZ-img-1_1771880620000_na1fn_dGF0dG9vLWhlcm8tYmc.webp");
+  opacity: 0.3;
+  z-index: 0;
+}
+
+#particles-canvas {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 10;
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.brand-name {
+  font-family: 'Cinzel Decorative', serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 0.2em;
+  margin-bottom: 0.5rem;
+}
+
+.brand-subtitle {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  color: rgba(0, 212, 232, 0.7);
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+}
+
+.badge {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  margin-bottom: 1.5rem;
+  font-size: 0.75rem;
+  font-family: 'Cinzel', serif;
+  color: #00d4e8;
+  border: 1px solid rgba(0, 212, 232, 0.4);
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+}
+
+.hero h1 {
+  margin-bottom: 1.5rem;
+}
+
+.hero h1 .cyan {
+  color: #00d4e8;
+  text-shadow: 0 0 20px rgba(0, 212, 232, 0.5);
+}
+
+.hero-description {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.65);
+  margin-bottom: 2rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ── TABS ── */
+.tabs {
+  display: flex;
+  gap: 0;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+.tab-btn {
+  padding: 0.75rem 1.5rem;
+  font-size: 0.85rem;
+  font-family: 'Cinzel', serif;
+  color: rgba(255, 255, 255, 0.6);
+  background: rgba(0, 212, 232, 0.05);
+  border: 1px solid rgba(0, 212, 232, 0.2);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.tab-btn:hover {
+  color: #00d4e8;
+  border-color: rgba(0, 212, 232, 0.5);
+}
+
+.tab-btn.active {
+  background: rgba(0, 212, 232, 0.15);
+  color: #00d4e8;
+  border-color: #00d4e8;
+  box-shadow: 0 0 15px rgba(0, 212, 232, 0.2);
+}
+
+.tab-btn:first-child {
+  border-radius: 4px 0 0 4px;
+}
+
+.tab-btn:last-child {
+  border-radius: 0 4px 4px 0;
+}
+
+/* ── CTA BUTTONS ── */
+.cta-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 3rem;
+}
+
+@media (min-width: 640px) {
+  .cta-buttons {
+    flex-direction: row;
+  }
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 2rem;
+  font-size: 0.85rem;
+  font-family: 'Cinzel', serif;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: none;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, rgba(0, 212, 232, 0.15), rgba(0, 212, 232, 0.05));
+  border: 1px solid rgba(0, 212, 232, 0.5);
+  color: #00d4e8;
+  box-shadow: 0 0 20px rgba(0, 212, 232, 0.15);
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, rgba(0, 212, 232, 0.25), rgba(0, 212, 232, 0.1));
+  box-shadow: 0 0 30px rgba(0, 212, 232, 0.3);
+}
+
+.btn-whatsapp {
+  background: rgba(37, 211, 102, 0.12);
+  border: 1px solid rgba(37, 211, 102, 0.5);
+  color: #25d366;
+}
+
+.btn-whatsapp:hover {
+  background: rgba(37, 211, 102, 0.2);
+  box-shadow: 0 0 20px rgba(37, 211, 102, 0.2);
+}
+
+/* ── SCROLL INDICATOR ── */
+.scroll-indicator {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  color: rgba(0, 212, 232, 0.5);
+  font-size: 0.75rem;
+  font-family: 'Cinzel', serif;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  animation: bounce 2s infinite;
+  z-index: 10;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateX(-50%) translateY(0);
+  }
+  50% {
+    transform: translateX(-50%) translateY(-10px);
+  }
+}
+
+/* ── CONTENT SECTION ── */
+.content-section {
+  position: relative;
+  padding: 4rem 1rem;
+  background-color: #06060e;
+}
+
+.content-section h2 {
+  color: #00d4e8;
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 1.75rem;
+}
+
+.section-subtitle {
+  text-align: center;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.9rem;
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+/* ── CARDS ── */
+.card {
+  background: rgba(0, 212, 232, 0.03);
+  border: 1px solid rgba(0, 212, 232, 0.15);
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  background: rgba(0, 212, 232, 0.08);
+  border-color: rgba(0, 212, 232, 0.3);
+  box-shadow: 0 0 20px rgba(0, 212, 232, 0.1);
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  cursor: pointer;
+  user-select: none;
+}
+
+.card-number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(0, 212, 232, 0.15);
+  color: #00d4e8;
+  font-family: 'Cinzel', serif;
+  font-weight: 700;
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+
+.card-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.85);
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  flex: 1;
+}
+
+.card-toggle {
+  color: #00d4e8;
+  font-size: 1.2rem;
+  transition: transform 0.3s ease;
+}
+
+.card.open .card-toggle {
+  transform: rotate(45deg);
+}
+
+.card-content {
+  display: none;
+  padding-top: 1rem;
+  margin-top: 1rem;
+  border-top: 1px solid rgba(0, 212, 232, 0.1);
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.9rem;
+  line-height: 1.7;
+}
+
+.card.open .card-content {
+  display: block;
+  animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.card-content ul {
+  list-style: none;
+  margin-top: 0.5rem;
+}
+
+.card-content li {
+  margin-bottom: 0.5rem;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.card-content li::before {
+  content: '◆';
+  position: absolute;
+  left: 0;
+  color: #00d4e8;
+}
+
+/* ── ALERT ── */
+.alert {
+  background: rgba(255, 48, 48, 0.08);
+  border: 1px solid rgba(255, 48, 48, 0.3);
+  border-radius: 8px;
+  padding: 1.25rem;
+  margin-bottom: 1.5rem;
+  display: flex;
+  gap: 1rem;
+}
+
+.alert-icon {
+  color: #ff3030;
+  font-size: 1.25rem;
+  flex-shrink: 0;
+}
+
+.alert-content {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.alert-title {
+  color: #ff3030;
+  font-family: 'Cinzel', serif;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.25rem;
+  text-transform: uppercase;
+}
+
+.alert-text {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* ── RULES GRID ── */
+.rules-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.rule-card {
+  background: rgba(0, 212, 232, 0.03);
+  border: 1px solid rgba(0, 212, 232, 0.15);
+  border-radius: 8px;
+  padding: 1.5rem;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.rule-card:hover {
+  background: rgba(0, 212, 232, 0.08);
+  border-color: rgba(0, 212, 232, 0.3);
+  transform: translateY(-5px);
+}
+
+.rule-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.rule-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1rem;
+  color: #00d4e8;
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.rule-description {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.65);
+  line-height: 1.5;
+}
+
+/* ── FOOTER ── */
+footer {
+  border-top: 1px solid rgba(0, 212, 232, 0.15);
+  background: #06060e;
+  padding: 3.5rem 1rem;
+  text-align: center;
+}
+
+.footer-brand {
+  font-family: 'Cinzel Decorative', serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 0.15em;
+  margin-bottom: 0.25rem;
+}
+
+.footer-subtitle {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  color: rgba(0, 212, 232, 0.7);
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+}
+
+.footer-divider {
+  width: 100px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #00d4e8, transparent);
+  margin: 1.5rem auto 2rem;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+.social-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.625rem 1.25rem;
+  font-size: 0.75rem;
+  font-family: 'Cinzel', serif;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.social-whatsapp {
+  background: rgba(37, 211, 102, 0.1);
+  border: 1px solid rgba(37, 211, 102, 0.4);
+  color: #25d366;
+}
+
+.social-whatsapp:hover {
+  background: rgba(37, 211, 102, 0.2);
+  border-color: rgba(37, 211, 102, 0.6);
+}
+
+.social-instagram {
+  background: rgba(225, 48, 108, 0.1);
+  border: 1px solid rgba(225, 48, 108, 0.4);
+  color: #e1306c;
+}
+
+.social-instagram:hover {
+  background: rgba(225, 48, 108, 0.2);
+  border-color: rgba(225, 48, 108, 0.6);
+}
+
+.footer-text {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.25);
+}
+
+/* ── FLOATING WHATSAPP BUTTON ── */
+.floating-whatsapp {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #25d366;
+  box-shadow: 0 4px 20px rgba(37, 211, 102, 0.5), 0 0 0 0 rgba(37, 211, 102, 0.4);
+  animation: pulse-whatsapp 2s infinite;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.floating-whatsapp:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 25px rgba(37, 211, 102, 0.7), 0 0 0 0 rgba(37, 211, 102, 0.4);
+}
+
+.floating-whatsapp svg {
+  width: 28px;
+  height: 28px;
+  fill: white;
+}
+
+@keyframes pulse-whatsapp {
+  0% {
+    box-shadow: 0 4px 20px rgba(37, 211, 102, 0.5), 0 0 0 0 rgba(37, 211, 102, 0.4);
+  }
+  70% {
+    box-shadow: 0 4px 20px rgba(37, 211, 102, 0.5), 0 0 0 12px rgba(37, 211, 102, 0);
+  }
+  100% {
+    box-shadow: 0 4px 20px rgba(37, 211, 102, 0.5), 0 0 0 0 rgba(37, 211, 102, 0);
+  }
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  .brand-name {
+    font-size: 1.25rem;
+  }
+
+  .rules-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cta-buttons {
+    flex-direction: column;
+  }
+
+  .btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* ── HIDDEN CLASS ── */
+.hidden {
+  display: none !important;
+}

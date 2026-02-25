@@ -109,17 +109,26 @@ img{
 }
 
 @media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+    align-items: flex-end;
+    margin-bottom: 1rem;
+  }
+
   .nav {
     display: none;
     flex-direction: column;
+    width: 100%;
+    padding: 15px 0px;
+  }
+
+  .nav a{
+    padding: 0.8rem 0;
+    width: 100%;
   }
   
   .nav.active {
     display: flex;
-  }
-
-  .menu-toggle {
-    display: block;
   }
 }
 

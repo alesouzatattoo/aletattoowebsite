@@ -22,7 +22,7 @@ class MobileMenu {
 document.addEventListener("DOMContentLoaded", () => {
   new ParticleCanvas();
   new TabSwitcher();
-  new MobileMenu(); // 👈 ADICIONE ISSO
+  new MobileMenu();
 });
 
 // ── PARTICLE CANVAS ──

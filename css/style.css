@@ -1146,6 +1146,7 @@ footer {
 
 .tab-content {
   display: none;
+  padding: 1rem;
 }
 
 .tab-content:not(.hidden) {
